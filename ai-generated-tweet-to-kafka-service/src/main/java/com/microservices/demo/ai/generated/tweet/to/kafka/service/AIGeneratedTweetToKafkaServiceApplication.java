@@ -1,8 +1,8 @@
 package com.microservices.demo.ai.generated.tweet.to.kafka.service;
 
-import com.microservices.demo.ai.generated.tweet.to.kafka.service.config.AIGeneratedTweetToKafkaServiceConfigData;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.init.StreamInitializer;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.runner.AIStreamRunner;
+import com.microservices.demo.config.AIGeneratedTweetToKafkaServiceConfigData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

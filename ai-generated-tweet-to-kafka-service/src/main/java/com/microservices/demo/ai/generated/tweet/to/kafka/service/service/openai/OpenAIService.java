@@ -2,11 +2,11 @@ package com.microservices.demo.ai.generated.tweet.to.kafka.service.service.opena
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservices.demo.ai.generated.tweet.to.kafka.service.config.AIGeneratedTweetToKafkaServiceConfigData;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.exception.AIGeneratedTweetToKafkaServiceException;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.service.AIService;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.service.openai.model.OpenAIRequest;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.service.openai.model.OpenAIResponse;
+import com.microservices.demo.config.AIGeneratedTweetToKafkaServiceConfigData;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
