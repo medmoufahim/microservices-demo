@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ai-generated-tweet-to-kafka-service
+  profiles:
+    active: ai_generated_tweet_to_kafka
+  cloud:
+    config:
+      name: ai-generated-tweet-to-kafka-service,config-client
+      uri: http://localhost:8888
+      username: spring_cloud_config
+      password: ${CONFIG_SERVER_PASSWORD}

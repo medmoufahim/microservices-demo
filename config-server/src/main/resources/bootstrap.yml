@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/medmoufahim/spring-cloud-config-server-repository
+          username: medmoufahim
+          password: '{cipher}881427430239b7e22fc3a8d0ff579313478988806f661eabe060b33c5070f5efb669c07185aa4954020024beef51d1e8bfbd503e8c02cb826e9988a30c98fe8e'
+          clone-on-start: true
+          default-label: main
+      fail-fast: true
+  security:
+    user:
+      name: spring_cloud_config
+      password: ${CONFIG_SERVER_PASSWORD}
+
+
+
+

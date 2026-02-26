@@ -1,0 +1,13 @@
+services:
+  config-server:
+    image: ${GROUP_ID}/config.server:${SERVICE_VERSION:-latest}
+    ports:
+      - "5006:5006"
+    volumes:
+      - "./docker-logs/config-server:/workspace/config-server/logs"
+    environment:
+      - "JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006 -Xms128m -Xmx256m"
+      - "ENCRYPT_KEY=${ENCRYPT_KEY}"
+      - "SPRING_SECURITY_USER_PASSWORD=${CONFIG_SERVER_PASSWORD}"
+    networks:
+      - ${GLOBAL_NETWORK:-services}
