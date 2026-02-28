@@ -7,5 +7,5 @@ spring:
     config:
       name: ai-generated-tweet-to-kafka-service,config-client
       uri: http://localhost:8888
-      username: spring_cloud_config
+      username: spring_cloud_user
       password: ${CONFIG_SERVER_PASSWORD}

@@ -28,7 +28,7 @@ docker run --rm --tty \
 
 Exemple :
 ```bash 
-docker run --rm --tty --network docker-compose_application confluentinc/cp-kafkacat kafkacat -b kafka-broker-1:9092 -C -K: -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\n--\n' -t ai-generated-tweet-to-kafka-topic
+docker run --rm --tty --network docker-compose_application confluentinc/cp-kafkacat kafkacat -b kafka-broker-1:9092 -C -K: -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\n--\n' -t twitter-topic
 ```
 
 More about Kafkacat : https://hub.docker.com/r/confluentinc/cp-kafkacat/
