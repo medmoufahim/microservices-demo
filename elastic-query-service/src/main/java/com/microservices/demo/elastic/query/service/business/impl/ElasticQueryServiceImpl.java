@@ -1,0 +1,43 @@
+package com.microservices.demo.elastic.query.service.business.impl;
+
+import com.microservices.demo.elastic.model.index.impl.TwitterIndexModel;
+import com.microservices.demo.elastic.query.client.service.ElasticQueryClient;
+import com.microservices.demo.elastic.query.service.business.ElasticQueryService;
+import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceResponseModelAssembler;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Slf4j
+@Service
+public class ElasticQueryServiceImpl implements ElasticQueryService {
+
+    private final ElasticQueryServiceResponseModelAssembler elasticQueryServiceResponseModelAssembler;
+
+    private final ElasticQueryClient<TwitterIndexModel> elasticQueryClient;
+
+    public ElasticQueryServiceImpl(ElasticQueryServiceResponseModelAssembler elasticQueryServiceResponseModelAssembler, ElasticQueryClient<TwitterIndexModel> elasticQueryClient) {
+        this.elasticQueryServiceResponseModelAssembler = elasticQueryServiceResponseModelAssembler;
+        this.elasticQueryClient = elasticQueryClient;
+    }
+
+    @Override
+    public ElasticQueryServiceResponseModel getDocumentById(String id) {
+        log.info("Querying elasticsearch for document with id {} ", id);
+        return elasticQueryServiceResponseModelAssembler.toModel(elasticQueryClient.getIndexModelById(id));
+    }
+
+    @Override
+    public List<ElasticQueryServiceResponseModel> getDocumentsByText(String text) {
+        log.info("Querying elasticsearch for document with text {} ", text);
+        return elasticQueryServiceResponseModelAssembler.toModels(elasticQueryClient.getIndexModelByText(text));
+    }
+
+    @Override
+    public List<ElasticQueryServiceResponseModel> getAllDocuments() {
+        log.info("Querying all documents in elasticsearch");
+        return elasticQueryServiceResponseModelAssembler.toModels(elasticQueryClient.getAllIndexModels());
+    }
+}

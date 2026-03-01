@@ -25,7 +25,10 @@
 		<module>common-config</module>
 		<module>config-server</module>
 		<module>elastic</module>
-    </modules>
+        <module>elastic/elastic-query-client</module>
+		<module>common-util</module>
+		<module>elastic-query-service</module>
+	</modules>
     <packaging>pom</packaging>
 
 	<repositories>
@@ -48,6 +51,7 @@
 		<kafka-avro-serializer.version>7.9.0</kafka-avro-serializer.version>
 		<spring-cloud-dependencies.version>2025.0.1</spring-cloud-dependencies.version>
 		<elastic.version>8.18.8</elastic.version>
+		<springdoc-openapi-starter-webmvc-ui.version>2.8.6</springdoc-openapi-starter-webmvc-ui.version>
 	</properties>
 
 	<dependencyManagement>
@@ -70,12 +74,22 @@
 			</dependency>
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
+				<artifactId>elastic-query-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
 				<artifactId>app-config-data</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>common-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>common-util</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -92,6 +106,12 @@
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>kafka-producer</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${springdoc-openapi-starter-webmvc-ui.version}</version>
 			</dependency>
 
 			<dependency>
