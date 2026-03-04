@@ -6,11 +6,10 @@ import com.google.genai.types.GenerateContentResponse;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.exception.AIGeneratedTweetToKafkaServiceException;
 import com.microservices.demo.ai.generated.tweet.to.kafka.service.service.AIService;
 import com.microservices.demo.config.AIGeneratedTweetToKafkaServiceConfigData;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.PreDestroy;
 
 @Service
 @Slf4j

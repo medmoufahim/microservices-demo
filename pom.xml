@@ -28,6 +28,11 @@
         <module>elastic/elastic-query-client</module>
 		<module>common-util</module>
 		<module>elastic-query-service</module>
+		<module>elastic-query-web-client</module>
+		<module>elastic-query-service-common</module>
+		<module>elastic-query-web-client-common</module>
+		<module>reactive-elastic-query-service</module>
+		<module>reactive-elastic-query-web-client</module>
 	</modules>
     <packaging>pom</packaging>
 
@@ -75,6 +80,16 @@
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>elastic-query-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>elastic-query-web-client-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>elastic-query-service-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
